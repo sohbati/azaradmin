@@ -8,9 +8,11 @@ import { environment } from '../environments/environment';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule } from '@angular/material';
+import { CircularMenuComponent } from './menu/circular-menu/circular-menu.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CircularMenuComponent
   ],
   imports: [
     BrowserModule,
