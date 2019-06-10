@@ -1,0 +1,29 @@
+ Volume in drive D is data1
+ Volume Serial Number is 49E5-F9CF
+
+ Directory of D:\project\azaradmin
+
+06/03/2019  03:03 PM    <DIR>          .
+06/03/2019  03:03 PM    <DIR>          ..
+06/01/2019  12:20 PM               246 .editorconfig
+06/01/2019  12:20 PM               629 .gitignore
+06/03/2019  02:45 PM    <DIR>          .vscode
+06/03/2019  03:03 PM                 0 a.txt
+06/01/2019  01:14 PM             3,687 angular.json
+06/01/2019  12:20 PM               429 browserslist
+06/03/2019  02:45 PM    <DIR>          dist
+06/03/2019  02:45 PM    <DIR>          e2e
+06/01/2019  12:20 PM             1,021 karma.conf.js
+06/03/2019  02:38 PM             1,085 LICENSE
+06/01/2019  01:14 PM               585 ngsw-config.json
+06/03/2019  03:02 PM    <DIR>          node_modules
+06/03/2019  12:08 PM           350,340 package-lock.json
+06/03/2019  12:08 PM             1,459 package.json
+06/01/2019  12:20 PM             1,026 README.md
+06/03/2019  02:45 PM    <DIR>          src
+06/01/2019  12:20 PM               210 tsconfig.app.json
+06/01/2019  12:20 PM               438 tsconfig.json
+06/01/2019  12:20 PM               270 tsconfig.spec.json
+06/01/2019  12:20 PM             1,985 tslint.json
+              15 File(s)        363,410 bytes
+               7 Dir(s)  148,307,177,472 bytes free
