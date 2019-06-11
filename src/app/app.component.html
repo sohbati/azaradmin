@@ -2,11 +2,13 @@
   <mat-toolbar color="primary" class="application-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="application-app-name">Responsive App</h1>
+   
   </mat-toolbar>
 
-
+  
   <mat-sidenav-container class="application-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : sidenavMode" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
         <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
       </mat-nav-list>
@@ -14,7 +16,9 @@
 
     <mat-sidenav-content>
       <p *ngFor="let content of fillerContent">{{content}}</p>
+      <app-circular-menu (sidenavModeChanged)="sidenavModeChange($event)"></app-circular-menu>
     </mat-sidenav-content>
+    
   </mat-sidenav-container>
   
 <mat-toolbar class="application-footer" color="background">
