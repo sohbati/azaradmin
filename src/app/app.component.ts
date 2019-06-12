@@ -8,6 +8,7 @@ import {MediaMatcher} from '@angular/cdk/layout';
 })
 export class AppComponent implements OnDestroy{
   mobileQuery: MediaQueryList;
+  sidenavMode: string = "over";
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item-Nav Item-Nav  ${i + 1}`);
 
@@ -24,9 +25,16 @@ export class AppComponent implements OnDestroy{
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+
+    this.sidenavMode =  'side';
+
   }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  sidenavModeChange(mode: string) {
+    this.sidenavMode = mode;
   }
 }
