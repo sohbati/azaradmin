@@ -7,7 +7,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule } from '@angular/material';
+import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatTooltipModule,MatSelectModule } from '@angular/material';
 import { CircularMenuComponent } from './menu/circular-menu/circular-menu.component';
 @NgModule({
   declarations: [
@@ -23,6 +23,8 @@ import { CircularMenuComponent } from './menu/circular-menu/circular-menu.compon
     MatIconModule,
     MatToolbarModule,
     MatListModule,
+    MatTooltipModule,
+    MatSelectModule,
 
   ],
   providers: [],

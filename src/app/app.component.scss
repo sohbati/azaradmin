@@ -12,7 +12,7 @@
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
-}
+} 
 
 h1.application-app-name {
   margin-left: 8px;
@@ -31,4 +31,10 @@ h1.application-app-name {
 }
 .application-footer {
   height: 30px;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
 }
