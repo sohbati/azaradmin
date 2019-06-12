@@ -24,7 +24,7 @@ import { CircularMenuComponent } from './menu/circular-menu/circular-menu.compon
     MatToolbarModule,
     MatListModule,
     MatTooltipModule,
-    MatSelectModule, 
+    MatSelectModule,  
 	
   ],
   providers: [],
