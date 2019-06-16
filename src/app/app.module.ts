@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatTooltipModule,MatSelectModule } from '@angular/material';
 import { CircularMenuComponent } from './menu/circular-menu/circular-menu.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { CircularMenuComponent } from './menu/circular-menu/circular-menu.compon
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
+    FormsModule,
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,

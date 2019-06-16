@@ -4,14 +4,14 @@
     <h1 class="application-app-name">Responsive App</h1>
     <span class="fill-remaining-space"></span>
     <mat-select style="width: 8em" [(ngModel)]="selectChangeValue"
-    (selectionChange) = "onLanguageSelectionChange()" >
+      (selectionChange) = "onLanguageSelectionChange()" >
       <mat-option value="en_US">English</mat-option>
       <mat-option value="fa_IR">Persian</mat-option>
   </mat-select> 
 
   </mat-toolbar>
  
-  <mat-sidenav-container class="application-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  <mat-sidenav-container [dir]="direction" class="application-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : sidenavMode" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
