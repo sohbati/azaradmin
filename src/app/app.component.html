@@ -3,7 +3,8 @@
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="application-app-name">Responsive App</h1>
     <span class="fill-remaining-space"></span>
-    <mat-select style="width: 8em">
+    <mat-select style="width: 8em" [(ngModel)]="selectChangeValue"
+    (selectionChange) = "onLanguageSelectionChange()" >
       <mat-option value="en_US">English</mat-option>
       <mat-option value="fa_IR">Persian</mat-option>
   </mat-select> 

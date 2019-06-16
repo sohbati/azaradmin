@@ -9,6 +9,7 @@ import {MediaMatcher} from '@angular/cdk/layout';
 export class AppComponent implements OnDestroy{
   mobileQuery: MediaQueryList;
   sidenavMode: string = "over";
+  selectChangeValue: string = "";
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item-Nav Item-Nav  ${i + 1}`);
 
@@ -30,11 +31,15 @@ export class AppComponent implements OnDestroy{
 
   }
 
-  ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
-  }
-
   sidenavModeChange(mode: string) {
     this.sidenavMode = mode;
+  }
+
+  onLanguageSelectionChange() {
+
+  }
+  
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 }
