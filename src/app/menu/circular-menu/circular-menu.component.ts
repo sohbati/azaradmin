@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-circular-menu',
@@ -7,11 +7,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CircularMenuComponent implements OnInit {
   @Output() sidenavModeChanged = new EventEmitter<String>();
+  @Input() circularMenuPosition: string = ""; //Left - Right
+
   sidenavMode: string[] = ['over', 'push', 'side'];
   sidenavIndex: number = 0;
   toolTipTextArray: string[] = ['Sidenav mode OVER', 'Sidenav mode PUSH', 'Sidenav mode SIDE'];
   toolTipText: string =this.toolTipTextArray[0];
-
+  
   constructor() { }
 
   ngOnInit() {

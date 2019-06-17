@@ -3,8 +3,8 @@
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="application-app-name">Responsive App</h1>
     <span class="fill-remaining-space"></span>
-    <mat-select style="width: 8em" [(ngModel)]="selectChangeValue"
-      (selectionChange) = "onLanguageSelectionChange()" >
+    <mat-select style="width: 8em" [(ngModel)]="LanguageSelectChangeValue"
+      (selectionChange) = "onLanguageChange()" >
       <mat-option value="en_US">English</mat-option>
       <mat-option value="fa_IR">Persian</mat-option>
   </mat-select> 
@@ -21,7 +21,9 @@
 
     <mat-sidenav-content>
       <p *ngFor="let content of fillerContent">{{content}}</p>
-      <app-circular-menu (sidenavModeChanged)="sidenavModeChange($event)"></app-circular-menu>
+      <app-circular-menu (sidenavModeChanged)="sidenavModeChange($event)" 
+        [circularMenuPosition]="circularMenuPosition">
+        </app-circular-menu>
     </mat-sidenav-content>
     
   </mat-sidenav-container>

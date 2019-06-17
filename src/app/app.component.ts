@@ -9,8 +9,9 @@ import {MediaMatcher} from '@angular/cdk/layout';
 export class AppComponent implements OnDestroy{
   mobileQuery: MediaQueryList;
   sidenavMode: string = 'over';
-  selectChangeValue: string = '';
+  LanguageSelectChangeValue: string = '';
   direction: string = '';
+  circularMenuPosition: string = '';
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item-Nav Item-Nav  ${i + 1}`);
 
@@ -29,28 +30,36 @@ export class AppComponent implements OnDestroy{
     this.mobileQuery.addListener(this._mobileQueryListener);
 
     this.sidenavMode =  'side';
+    this.setDefaultLanguage();
+  }
 
+  setDefaultLanguage() {
+    this.LanguageSelectChangeValue = 'en_US';
+    this.onLanguageChange(); 
   }
 
   sidenavModeChange(mode: string) {
     this.sidenavMode = mode;
   }
 
-  onLanguageSelectionChange() {
-    if (this.selectChangeValue === 'en_US') {
-      this.mirrorDirectionToLTR();
-    }else {
+  onLanguageChange() {
+    if (this.LanguageSelectChangeValue === 'fa_IR') {
       this.mirrorDirectionToRTL();
+    }else {
+      this.mirrorDirectionToLTR();
     }
   }
 
   mirrorDirectionToLTR() {
     this.direction = 'ltr';
+    this.circularMenuPosition = 'Right';
     document.body.setAttribute('dir', this.direction);
   }
 
   mirrorDirectionToRTL() {
+    console.log("RTL");
     this.direction = 'rtl';
+    this.circularMenuPosition = 'Left';
     document.body.setAttribute('dir', this.direction);
   }
 

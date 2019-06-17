@@ -1,4 +1,5 @@
-<div id="circularMenu" class="circular-menu">
+<div id="circularMenu" 
+  [class]="circularMenuPosition === 'Right' ? 'circular-menu' : 'circular-menu circular-menu-left' ">
 
   <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
     <i>
