@@ -7,13 +7,16 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatTooltipModule,MatSelectModule } from '@angular/material';
+import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatTooltipModule,
+  MatSelectModule,MatTreeModule } from '@angular/material';
 import { CircularMenuComponent } from './menu/circular-menu/circular-menu.component';
 import { FormsModule } from '@angular/forms';
+import { MenuTreeComponent } from './menu/menu-tree/menu-tree.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CircularMenuComponent
+    CircularMenuComponent,
+    MenuTreeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,9 @@ import { FormsModule } from '@angular/forms';
     MatListModule,
     MatTooltipModule,
     MatSelectModule,  
+    MatTreeModule,
+
+    
 	
   ],
   providers: [],

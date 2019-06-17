@@ -1,0 +1,25 @@
+.docs-component-viewer-nav-content {
+    margin: 25px;
+    width: 240px;
+    max-height: 75vh;
+    overflow: auto;
+}
+
+.docs-nav-content-btn {
+    padding: 10px 15px;
+    font-weight: 700;
+    line-height: 16px;
+    margin: 0;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: 0 0;
+    border: none;
+}
+
+.docs-nav-content-btn:hover {
+  background-color: RoyalBlue;
+}
