@@ -1,28 +1,19 @@
-<div>
+ 
   <div class="docs-component-viewer-nav-content">
 
-    <nav class="">
-      <button class="docs-nav-content-btn">
-        Form Controls 
-        <mat-icon role="img" aria-hidden="true">keyboard_arrow_down</mat-icon>
-      </button>
-      <div></div>
-      <ul style="height: 10px; display: '';">
-        <li><a class=""> Autocomplete </a></li>
-      </ul>
-      <hr>
-    </nav>
-
     <nav>
-      <button class="docs-nav-content-btn"> Navigation 
-      <mat-icon   role="img" aria-hidden="true">keyboard_arrow_down</mat-icon></button>
-      <ul class="" style="height: 10px; display: none;">
-
-        <li><a href="#"> Menu </a></li>
+      <button (click)="navMenuBarClick(0)" class="docs-nav-content-btn">
+        Form Controls 
+        <span class="navigator1">
+        <mat-icon>{{navigationList[0] === 'down' ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}}</mat-icon>
+      </span>
+      </button>
+       
+      <ul [class]="navContent[0]">
+        <li><a > Autocomplete </a></li>
       </ul>
-
       <hr>
     </nav>
 
   </div>
-</div>
+ 

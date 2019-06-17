@@ -8,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuTreeComponent implements OnInit {
 
+  navigationList: string[] = ['down'];
+  navContent: string[] = ['nav-content-hide'];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  navMenuBarClick(index: number) {
+    this.navigationList[index] = this.navigationList[index] == 'down' ? 'up' : 'down'; 
+    this.navContent[index] = this.navigationList[index] == 'down' ? 'nav-content-hide' : 'nav-content-show';
   }
 
 }
