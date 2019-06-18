@@ -12,6 +12,8 @@ import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatTo
 import { CircularMenuComponent } from './menu/circular-menu/circular-menu.component';
 import { FormsModule } from '@angular/forms';
 import { MenuTreeComponent } from './menu/menu-tree/menu-tree.component';
+import {MenuService} from "./menu/menu-tree/menu.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,7 @@ import { MenuTreeComponent } from './menu/menu-tree/menu-tree.component';
     
 	
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

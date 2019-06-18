@@ -1,15 +1,15 @@
  
   <div class="docs-component-viewer-nav-content">
 
-    <nav>
-      <button (click)="navMenuBarClick(0)" class="docs-nav-content-btn">
-        Form Controls 
+    <nav *ngFor="let item of navigationModel; let i=index">
+      <button (click)="navMenuBarClick(i)" class="docs-nav-content-btn">
+        <span>{{item.caption}}</span>
         <span class="navigator1">
-        <mat-icon>{{navigationList[0] === 'down' ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}}</mat-icon>
+        <mat-icon *ngIf="item.treeModel != null && item.treeModel.length > 0" >{{navigationListIconStatus[i] === 'down' ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}}</mat-icon>
       </span>
       </button>
        
-      <ul [class]="navContent[0]">
+      <ul [class]="navListContentStatus[i]">
         <li><a > Autocomplete </a></li>
       </ul>
       <hr>
