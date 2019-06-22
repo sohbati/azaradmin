@@ -30,12 +30,12 @@ export class MenuService {
           navigateTo: '1',
           caption: 'setting1',
           icon: '',
-          childNodes: null,
+          children: null,
       },{
           navigateTo: '2',
           caption: 'setting2',
           icon: '',
-          childNodes: null,
+          children: null,
       }];
       navItem2.treeModel = treeSet2;
       
@@ -50,12 +50,12 @@ export class MenuService {
           navigateTo: '1',
           caption: 'config1',
           icon: '',
-          childNodes: null,
+          children: null,
       },{
           navigateTo: '2',
           caption: 'config2',
           icon: '',
-          childNodes: null,
+          children: null,
       }];
       navItem3.treeModel = treeSet3;
 

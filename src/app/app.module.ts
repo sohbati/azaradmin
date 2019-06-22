@@ -8,12 +8,13 @@ import { environment } from '../environments/environment';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatTooltipModule,
-  MatSelectModule,MatTreeModule } from '@angular/material';
+  MatSelectModule,MatTreeModule, MatButtonModule } from '@angular/material';
 import { CircularMenuComponent } from './menu/circular-menu/circular-menu.component';
 import { FormsModule } from '@angular/forms';
 import { MenuTreeComponent } from './menu/menu-tree/menu-tree.component';
 import {MenuService} from "./menu/menu-tree/menu.service";
 import { PagesModule } from './pages/pages.module';
+import { CdkTreeModule } from '@angular/cdk/tree';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,9 @@ import { PagesModule } from './pages/pages.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     FormsModule,
+
+    MatButtonModule,
+    MatIconModule,
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
@@ -34,6 +38,7 @@ import { PagesModule } from './pages/pages.module';
     MatTooltipModule,
     MatSelectModule,  
     MatTreeModule,
+    CdkTreeModule,
     PagesModule,
     
 	
