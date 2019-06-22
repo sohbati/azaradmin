@@ -36,7 +36,8 @@ export class MenuTreeComponent implements OnInit {
   navMenuBarClick(index: number) {
     if (this.navigationModel[index].treeModel == null ||
         this.navigationModel[index].treeModel.length == 0) {
-      this.router.navigate([this.navigationModel[index].id]);
+      console.log("navigate");
+          this.router.navigate([this.navigationModel[index].id]);
       return;
     }
 

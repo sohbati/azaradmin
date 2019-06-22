@@ -14,12 +14,14 @@ export class MenuService {
 
       /**Item 1 */
       let navItem1 : NavigationItemModel = new NavigationItemModel();
+      navItem1.id = 'dashbaord';
       navItem1.caption = 'Dashbaord';
       navItem1.treeModel = [];
       navModel.push(navItem1);
 
       /**Item 2 */
       let navItem2 : NavigationItemModel = new NavigationItemModel();
+      navItem2.id = 'setting';
       navItem2.caption = 'Setting';
       navItem2.treeModel = [];
       navModel.push(navItem2);
@@ -39,6 +41,7 @@ export class MenuService {
       
       /**Item 3 */
       let navItem3 : NavigationItemModel = new NavigationItemModel();
+      navItem3.id = 'config';
       navItem3.caption = 'config';
       navItem3.treeModel = [];
       navModel.push(navItem3);
