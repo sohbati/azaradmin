@@ -5,46 +5,9 @@ import {TreeModel} from './menu-tree-model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlattener, MatTreeFlatDataSource } from '@angular/material';
-
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
-
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Fruit',
-    children: [
-      {name: 'Apple'},
-      {name: 'Banana'},
-      {name: 'Fruit loops'},
-    ]
-  }, {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [
-          {name: 'Broccoli'},
-          {name: 'Brussel sprouts'},
-        ]
-      }, {
-        name: 'Orange',
-        children: [
-          {name: 'Pumpkins'},
-          {name: 'Carrots'},
-        ]
-      },
-    ]
-  },
-];
-
+ 
 /** Flat node with expandable and level information */
-interface ExampleFlatNode {
-  expandable: boolean;
-  name: string;
-  level: number;
-}
+ 
 
 @Component({
   selector: 'app-menu-tree',
@@ -91,16 +54,18 @@ export class MenuTreeComponent implements OnInit {
   }
 
   /** Tree Methods and ... */
-  treeControl: Array<FlatTreeControl<ExampleFlatNode>> = [];
+  treeControl: Array<FlatTreeControl<TreeModel>> = [];
   treeFlattener = [];
-  dataSource = []; 
+  dataSource: Array<MatTreeFlatDataSource<any, TreeModel>> = []; 
   hasChild = [];
-
-  private _transformer = (node: FoodNode, level: number) => {
+ 
+  private _transformer = (node: TreeModel, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
       level: level,
+      navigateTo: node.navigateTo,
+      icon: node.icon,
     };
   }
 
@@ -115,7 +80,7 @@ export class MenuTreeComponent implements OnInit {
 
   initTree(index: number) {
     console.log(index);
-    this.treeControl[index] = new FlatTreeControl<ExampleFlatNode>(
+    this.treeControl[index] = new FlatTreeControl<TreeModel>(
         node => node.level, node => node.expandable);
 
     this.treeFlattener[index] = new MatTreeFlattener(
@@ -123,9 +88,13 @@ export class MenuTreeComponent implements OnInit {
 
     this.dataSource[index] = new MatTreeFlatDataSource(this.treeControl[index], this.treeFlattener[index]);
 
-    this.hasChild[index] = (_: number, node: ExampleFlatNode) => node.expandable;
+    this.hasChild[index] = (_: number, node: TreeModel) => node.expandable;
 
-    this.dataSource[index].data = TREE_DATA;
+    this.dataSource[index].data = this.navigationModel[index].treeModel;
 
+  }
+  /** Tree Node Click Event */
+  onTreeNodeClick(event: any) {
+    console.log(event);
   }
 }

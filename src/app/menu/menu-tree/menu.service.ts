@@ -27,13 +27,13 @@ export class MenuService {
       navModel.push(navItem2);
       
       let treeSet2: TreeModel[] = [{
-          navigateTo: '1',
-          caption: 'setting1',
+          navigateTo: 'test_1',
+          name: 'setting1',
           icon: '',
           children: null,
       },{
-          navigateTo: '2',
-          caption: 'setting2',
+          navigateTo: 'test_2',
+          name: 'setting2',
           icon: '',
           children: null,
       }];
@@ -48,12 +48,12 @@ export class MenuService {
       
       let treeSet3: TreeModel[] = [{
           navigateTo: '1',
-          caption: 'config1',
+          name: 'config1',
           icon: '',
           children: null,
       },{
           navigateTo: '2',
-          caption: 'config2',
+          name: 'config2',
           icon: '',
           children: null,
       }];

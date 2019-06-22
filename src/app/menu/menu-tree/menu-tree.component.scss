@@ -33,3 +33,18 @@
 .nav-content-show {
   display: '';
 }
+ 
+//////////////////////////////////////////
+@mixin hover-active {
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(135, 190, 226);
+    .touch & {
+      @content;
+    }
+  }
+}
+
+.tree-node {
+   @include hover-active {}
+}

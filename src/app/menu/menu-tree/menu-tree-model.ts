@@ -1,8 +1,12 @@
 export class TreeModel {
     navigateTo: string;
-    caption: string;
+    name: string;
+    expandable?: boolean;
+    level?: number;
+  
     icon: string;
     children?: TreeModel[];
+    
 }
 
 export class NavigationItemModel {
