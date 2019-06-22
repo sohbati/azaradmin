@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MenuService} from "./menu.service";
 import {NavigationItemModel} from './menu-tree-model';
 import {TreeModel} from './menu-tree-model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-menu-tree',
@@ -16,7 +16,8 @@ export class MenuTreeComponent implements OnInit {
   navigationModel: Array<NavigationItemModel> = [];
 
   constructor(private menuService: MenuService,
-    private router: Router) {
+    private router: Router,
+    private route: ActivatedRoute) {
 
     this.initNavigation();
    }
@@ -36,8 +37,9 @@ export class MenuTreeComponent implements OnInit {
   navMenuBarClick(index: number) {
     if (this.navigationModel[index].treeModel == null ||
         this.navigationModel[index].treeModel.length == 0) {
-      console.log("navigate");
-          this.router.navigate([this.navigationModel[index].id]);
+      console.log(this.navigationModel[index].id);
+          this.router.navigate([this.navigationModel[index].id],
+          { relativeTo: this.route });
       return;
     }
 

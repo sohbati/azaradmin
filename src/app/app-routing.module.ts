@@ -4,14 +4,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'dashbaord',
     loadChildren: () => import('./pages/pages.module').then(mod => mod.PagesModule),
   },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./pages/pages.module').then(mod => mod.PagesModule),
-  },
-  { path: '**', component: PageNotFoundComponent }
+  
 ];
 
 

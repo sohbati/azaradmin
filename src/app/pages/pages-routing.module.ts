@@ -3,20 +3,21 @@ export class AppRoutingModule { }
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PagesComponent } from './pages.component';
 
-const routes: Routes = [
+const pagesRoutes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
+     children: [
+       {path: '',component: DashboardComponent,},
+       {path: 'dashboard', component: DashboardComponent,}
+     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(pagesRoutes)],
   exports: [RouterModule]
 })
 export class PagesRoutingModule { }
