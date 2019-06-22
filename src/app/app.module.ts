@@ -14,14 +14,12 @@ import { FormsModule } from '@angular/forms';
 import { MenuTreeComponent } from './menu/menu-tree/menu-tree.component';
 import {MenuService} from "./menu/menu-tree/menu.service";
 import { PagesModule } from './pages/pages.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CircularMenuComponent,
     MenuTreeComponent,
-    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

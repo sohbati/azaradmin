@@ -1,12 +1,12 @@
 export class TreeModel {
-    id: string;
+    navigateTo: string;
     caption: string;
     icon: string;
     childNodes: TreeModel[];
 }
 
 export class NavigationItemModel {
-    id: string;
+    navigateTo: string;
     caption: string;
     treeModel: Array<TreeModel> = [];
 }

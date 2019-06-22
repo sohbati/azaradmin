@@ -14,25 +14,25 @@ export class MenuService {
 
       /**Item 1 */
       let navItem1 : NavigationItemModel = new NavigationItemModel();
-      navItem1.id = 'dashbaord';
-      navItem1.caption = 'Dashbaord';
+      navItem1.navigateTo = 'dashboard';
+      navItem1.caption = 'dashboard';
       navItem1.treeModel = [];
       navModel.push(navItem1);
 
       /**Item 2 */
       let navItem2 : NavigationItemModel = new NavigationItemModel();
-      navItem2.id = 'setting';
+      navItem2.navigateTo = 'setting';
       navItem2.caption = 'Setting';
       navItem2.treeModel = [];
       navModel.push(navItem2);
       
       let treeSet2: TreeModel[] = [{
-          id: '1',
+          navigateTo: '1',
           caption: 'setting1',
           icon: '',
           childNodes: null,
       },{
-          id: '2',
+          navigateTo: '2',
           caption: 'setting2',
           icon: '',
           childNodes: null,
@@ -41,18 +41,18 @@ export class MenuService {
       
       /**Item 3 */
       let navItem3 : NavigationItemModel = new NavigationItemModel();
-      navItem3.id = 'config';
+      navItem3.navigateTo = 'config';
       navItem3.caption = 'config';
       navItem3.treeModel = [];
       navModel.push(navItem3);
       
       let treeSet3: TreeModel[] = [{
-          id: '1',
+          navigateTo: '1',
           caption: 'config1',
           icon: '',
           childNodes: null,
       },{
-          id: '2',
+          navigateTo: '2',
           caption: 'config2',
           icon: '',
           childNodes: null,

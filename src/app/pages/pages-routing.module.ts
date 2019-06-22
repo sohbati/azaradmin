@@ -3,17 +3,15 @@ export class AppRoutingModule { }
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { PagesComponent } from './pages.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const pagesRoutes: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent,
-     children: [
-       {path: '',component: DashboardComponent,},
-       {path: 'dashboard', component: DashboardComponent,}
-     ]
-  }
+  }, 
+  {path: '',component: DashboardComponent,},
+  {path: '**',component: PageNotFoundComponent,}
 ];
 
 @NgModule({
