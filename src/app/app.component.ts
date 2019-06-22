@@ -57,7 +57,6 @@ export class AppComponent implements OnDestroy{
   }
 
   mirrorDirectionToRTL() {
-    console.log("RTL");
     this.direction = 'rtl';
     this.circularMenuPosition = 'Left';
     document.body.setAttribute('dir', this.direction);

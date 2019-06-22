@@ -6,6 +6,7 @@ export class TreeModel {
 }
 
 export class NavigationItemModel {
+    id: string;
     caption: string;
     treeModel: Array<TreeModel> = [];
 }

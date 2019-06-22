@@ -13,12 +13,15 @@ import { CircularMenuComponent } from './menu/circular-menu/circular-menu.compon
 import { FormsModule } from '@angular/forms';
 import { MenuTreeComponent } from './menu/menu-tree/menu-tree.component';
 import {MenuService} from "./menu/menu-tree/menu.service";
+import { PagesModule } from './pages/pages.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CircularMenuComponent,
-    MenuTreeComponent
+    MenuTreeComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import {MenuService} from "./menu/menu-tree/menu.service";
     MatTooltipModule,
     MatSelectModule,  
     MatTreeModule,
-
+    PagesModule,
     
 	
   ],
