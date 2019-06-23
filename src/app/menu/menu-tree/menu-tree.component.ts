@@ -44,8 +44,9 @@ export class MenuTreeComponent implements OnInit {
     if (this.navigationModel[index].treeModel == null ||
         this.navigationModel[index].treeModel.length == 0) {
       console.log(this.navigationModel[index].navigateTo);
-      this.router.navigate([this.navigationModel[index].navigateTo],
-          { relativeTo: this.route });
+      
+      this.navigateTo(this.navigationModel[index].navigateTo);
+          
       return;
     }
 
@@ -96,5 +97,11 @@ export class MenuTreeComponent implements OnInit {
   /** Tree Node Click Event */
   onTreeNodeClick(event: any) {
     console.log(event);
+    this.navigateTo(event.navigateTo);
+  }
+
+  navigateTo(url : string ) {
+    console.log('navigateTo:' + url);
+    this.router.navigate([url], { relativeTo: this.route });
   }
 }
