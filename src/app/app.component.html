@@ -3,13 +3,14 @@
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="application-app-name" i18n>Responsive App</h1>
     <span class="fill-remaining-space"></span>
-    <mat-select style="width: 8em" [(ngModel)]="LanguageSelectChangeValue" (selectionChange)="onLanguageChange()">
-      <mat-option value="en_US">English</mat-option>
-      <mat-option value="fa_IR">Persian</mat-option>
-    </mat-select>
+    <span (click)="onLoginClick()" style="cursor: pointer"><i matTooltip="Login" class="material-icons">input</i></span>
 
+    <button mat-button [matMenuTriggerFor]="menu"><i matTooltip="Language" class="material-icons">language</i></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onLanguageChange('en_US')" >English</button>
+      <button mat-menu-item  (click)="onLanguageChange('fa_IR')">Farsi</button>
+    </mat-menu>
   </mat-toolbar>
 
   <mat-sidenav-container [dir]="direction" class="application-sidenav-container"

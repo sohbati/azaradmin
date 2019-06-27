@@ -1,5 +1,7 @@
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
+import { Router, RouterStateSnapshot } from '@angular/router';
+import { AuthenticationService } from './auth/services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +17,14 @@ export class AppComponent implements OnDestroy{
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item-Nav Item-Nav  ${i + 1}`);
 
-  fillerContent = Array.from({length: 50}, () =>
-      `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-       laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-       voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
-
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, 
+    media: MediaMatcher,
+    private router: Router,
+    private authenticationService: AuthenticationService) {
+
+
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -35,14 +35,16 @@ export class AppComponent implements OnDestroy{
 
   setDefaultLanguage() {
     this.LanguageSelectChangeValue = 'en_US';
-    this.onLanguageChange(); 
+    this.onLanguageChange('en_US'); 
   }
 
   sidenavModeChange(mode: string) {
     this.sidenavMode = mode;
   }
 
-  onLanguageChange() {
+  onLanguageChange(lang: string) {
+    this.LanguageSelectChangeValue = lang;
+    console.log("clickd");
     if (this.LanguageSelectChangeValue === 'fa_IR') {
       this.mirrorDirectionToRTL();
     }else {
@@ -64,5 +66,11 @@ export class AppComponent implements OnDestroy{
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  onLoginClick() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
+
   }
 }

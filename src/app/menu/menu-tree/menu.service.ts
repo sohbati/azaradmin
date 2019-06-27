@@ -19,6 +19,13 @@ export class MenuService {
       navItem1.treeModel = [];
       navModel.push(navItem1);
 
+    //   //login test
+    //   let loginNavItem1 : NavigationItemModel = new NavigationItemModel();
+    //   loginNavItem1.navigateTo = 'login';
+    //   loginNavItem1.caption = 'login';
+    //   loginNavItem1.treeModel = [];
+    //   navModel.push(loginNavItem1);
+
       /**Item 2 */
       let navItem2 : NavigationItemModel = new NavigationItemModel();
       navItem2.navigateTo = 'setting';
